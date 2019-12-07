@@ -7,7 +7,47 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
+    <div class="container">
+        <form method="POST">
+            <label for="name" class="input-description">
+                Name:
+                <br>
+                <input type="text" id="name" class="input" placeholder="Bill Bobbington">
+            </label>
+            <br>
+            <label for="number" class="input-description">
+                Phone number:
+                <br>
+                <input type="number" id="number" class="input" placeholder="0121770189">
+            </label>
+            <br>
+            <label for="email" class="input-description">
+                Email address:
+                <br>
+                <input type="text" id="email" class="input" placeholder="Email@email.com">
+            </label>
+            <br>
+            <label for="displayId" class="input-description">
+                Table booking display:
+                <br>
+                <input type="text" id="displayId" class="input" placeholder="Bill and Bobs table">
+            </label>
+            <br>
+            <button type="submit" class="submit-button" id="book-table">Book the table..</button>
+        </form>
+    </div>
     
 </body>
+<script>
+    const name = document.querySelector(`#name`);
+    const number = document.querySelector(`#number`);
+    const email = document.querySelector(`#email`);
+    const displayId = document.querySelector(`#displayId`);
+    const submitBtn = document.querySelector(`#book-table`);
+    console.log(name);
+    console.log(number);
+    console.log(email);
+    console.log(displayId);
+    console.log(submitBtn);
+</script>
 </html>
