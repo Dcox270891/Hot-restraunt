@@ -38,9 +38,7 @@ app.get("/api/tables/:tables", function(req, res) {
 });
 app.post("/api/tables", function(req, res) {
     const newTable = req.body;
-    console.log(newTable);
     const newTableBooking = new TableBooking(newTable.name, newTable.number, newTable.email, newTable.displayId);
-    console.log(newTableBooking);
     tables.push(newTableBooking);
     res.json(newTableBooking);
 });
