@@ -28,9 +28,17 @@ app.get("/reserve", function(req, res) {
 app.get("/api/tables", function(req, res) {
     return res.json(tables);
 });
+app.get("/api/tables/:tables", function(req, res) {
+    var chosen = req.params.tables;
+    tables.forEach(table => {
+        if (chosen === tables.displayId){
+            return res.json(tables.displayId)
+        };
+    })
+});
 app.post("/api/tables", function(req, res) {
     const newTable = req.body;
-    newTable.displayId = newTable.displayId.replace(/\s+/g, "").toLowerCase();
+    newTable = new TableBooking(name, number, email, displayId)
     console.log(neTable);
     tables.push(newTable);
     res.json(newTable);
