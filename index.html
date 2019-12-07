@@ -39,11 +39,41 @@
     
 </body>
 <script>
+
     const name = document.querySelector(`#name`);
     const number = document.querySelector(`#number`);
     const email = document.querySelector(`#email`);
     const displayId = document.querySelector(`#displayId`);
     const submitBtn = document.querySelector(`#book-table`);
+
+
+    submitBtn.addEventListener('click', (e) =>{
+        event.preventDefault();
+        const newTable = {
+            name: name.value.trim(), 
+            number: number.value.trim(), 
+            email: email.value.trim(), 
+            displayId: displayId.value.trim()
+        };
+        console.log(newTable);
+
+        fetch('/api/tables', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newTable)
+        })
+        .then((data) => {
+            console.log("New Booking Made", data);
+            alert("Booking made!");
+
+        });
+    });
+
+
+
+
     console.log(name);
     console.log(number);
     console.log(email);
