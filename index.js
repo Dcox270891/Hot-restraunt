@@ -31,17 +31,18 @@ app.get("/api/tables", function(req, res) {
 app.get("/api/tables/:tables", function(req, res) {
     var chosen = req.params.tables;
     tables.forEach(table => {
-        if (chosen === tables.displayId){
-            return res.json(tables.displayId)
+        if (chosen === tables.name){
+            return res.json(table)
         };
     })
 });
 app.post("/api/tables", function(req, res) {
     const newTable = req.body;
-    newTable = new TableBooking(name, number, email, displayId)
-    console.log(neTable);
-    tables.push(newTable);
-    res.json(newTable);
+    console.log(newTable);
+    const newTableBooking = new TableBooking(newTable.name, newTable.number, newTable.email, newTable.displayId);
+    console.log(newTableBooking);
+    tables.push(newTableBooking);
+    res.json(newTableBooking);
 });
 
 app.listen(PORT, function() {
