@@ -31,7 +31,7 @@ app.get("/api/tables", function(req, res) {
 app.get("/api/tables/:tables", function(req, res) {
     var chosen = req.params.tables;
     tables.forEach(table => {
-        if (chosen === tables.name){
+        if (chosen === table.name){
             return res.json(table)
         };
     })
