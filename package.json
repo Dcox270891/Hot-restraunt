@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Dcox270891/Hot-restraunt#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
